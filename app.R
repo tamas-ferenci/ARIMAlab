@@ -155,7 +155,7 @@ server <- function(input, output) {
                              data.frame( spec, freq ) )
             emp <- FALSE
         }
-        maxspec <- max( specres$spec )
+        maxspec <- max( specres$spec )*1.1
         p3 <- lattice::xyplot( spec ~ freq, data = specres, ylim = c( 0, if( !is.nan( maxspec ) ) maxspec else 1 ), type = "l",
                                xlab = "", ylab = "",
                                main = if( emp )
