@@ -1,2 +1,1 @@
-# ARIMAlab
-ARIMA folyamatok vizsgálata
+A program címe: http://research.physcon.uni-obuda.hu/ARIMAlab/.
