@@ -1,0 +1,2 @@
+# ARIMAlab
+ARIMA folyamatok vizsgálata
