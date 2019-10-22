@@ -101,8 +101,8 @@ server <- function(input, output) {
         q <- as.integer( input$q )
         d <- as.integer( input$d )
         
-        phi <- c( input$phi1, input$phi2, input$phi3, input$phi4, input$phi5 )
-        theta <- c( input$theta1, input$theta2, input$theta3, input$theta4, input$theta5 )
+        phi <- c( input$phi1, input$phi2, input$phi3, input$phi4, input$phi5 )[ 1:p ]
+        theta <- c( input$theta1, input$theta2, input$theta3, input$theta4, input$theta5 )[ 1:q ]
         
         x <- xsim()
         
