@@ -11,9 +11,9 @@ ui <- fluidPage(
         tags$meta( property = "og:type", content = "website" ),
         tags$meta( property = "og:locale", content = "hu_HU" ),
         tags$meta( property = "og:url",
-                   content = "http://research.physcon.uni-obuda.hu/ARIMAlab/" ),
+                   content = "https://research.physcon.uni-obuda.hu/ARIMAlab/" ),
         tags$meta( property = "og:image",
-                   content = "http://research.physcon.uni-obuda.hu/ARIMAlab_Pelda.png" ),
+                   content = "https://research.physcon.uni-obuda.hu/ARIMAlab_Pelda.png" ),
         tags$meta( property = "og:description", content = paste0( "ARIMA-folyamatok vizsgálatát lehetővé tevő, tulajdonságait ",
                                                                   "szemléltető alkalmazás. ",
                                                                   "Írta: Ferenci Tamás." ) ),
@@ -23,7 +23,7 @@ ui <- fluidPage(
         tags$meta( name = "DC.Description", content = paste0( "ARIMA-folyamatok vizsgálatát lehetővé tevő, tulajdonságait ",
                                                               "szemléltető alkalmazás. " ) ),
         tags$meta( name = "DC.Publisher",
-                   content = "http://research.physcon.uni-obuda.hu/ARIMAlab/" ),
+                   content = "https://research.physcon.uni-obuda.hu/ARIMAlab/" ),
         tags$meta( name = "DC.Contributor", content = "Ferenci Tamás" ),
         tags$meta( name = "DC.Language", content = "hu_HU" )
     ),
@@ -45,7 +45,7 @@ ui <- fluidPage(
        a( "itt", href = "https://github.com/tamas-ferenci/ARIMAlab",
           target = "_blank" ), "olvashatóak el." ),
     div( class="fb-like",
-         "data-href"="http://research.physcon.uni-obuda.hu/ARIMAlab/",
+         "data-href"="https://research.physcon.uni-obuda.hu/ARIMAlab/",
          "data-layout"="standard", "data-action"="like", "data-size"="small",
          "data-show-faces"="true", "data-share"="true"), p(),
     
@@ -209,7 +209,7 @@ server <- function(input, output) {
         gridExtra::grid.arrange( p1, p2, p3, p4, p5, p6, layout_matrix = matrix( c( 1, 2, 2, 5, 1, 3, 4, 6 ), nc = 2 ) )
         
         grid::grid.text( "Ferenci Tamás, 2019", 0, 0.02, gp = grid::gpar( fontface = "bold" ), just = "left" )
-        grid::grid.text( "http://research.physcon.uni-obuda.hu", 1, 0.02, gp = grid::gpar( fontface = "bold" ), just = "right" )
+        grid::grid.text( "https://research.physcon.uni-obuda.hu", 1, 0.02, gp = grid::gpar( fontface = "bold" ), just = "right" )
     }
     
     output$plot1 <- renderPlot({
