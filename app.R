@@ -65,7 +65,7 @@ ui <- fluidPage(
         )
     ),
     
-    h4( "Írta: Ferenci Tamás (Óbudai Egyetem, Élettani Szabályozások Kutatóközpont), v1.00" ),
+    h4( "Írta: Ferenci Tamás (Óbudai Egyetem, Élettani Szabályozások Kutatóközpont), v1.01" ),
     
     tags$script( HTML( "var sc_project=11601191; 
                      var sc_invisible=1; 
@@ -101,8 +101,8 @@ server <- function(input, output) {
         q <- as.integer( input$q )
         d <- as.integer( input$d )
         
-        phi <- c( input$phi1, input$phi2, input$phi3, input$phi4, input$phi5 )[ 1:p ]
-        theta <- c( input$theta1, input$theta2, input$theta3, input$theta4, input$theta5 )[ 1:q ]
+        phi <- c( input$phi1, input$phi2, input$phi3, input$phi4, input$phi5 )[ 0:p ]
+        theta <- c( input$theta1, input$theta2, input$theta3, input$theta4, input$theta5 )[ 0:q ]
         
         x <- xsim()
         
