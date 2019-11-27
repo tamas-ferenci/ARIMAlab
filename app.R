@@ -65,7 +65,7 @@ ui <- fluidPage(
         )
     ),
     
-    h4( "Írta: Ferenci Tamás (Óbudai Egyetem, Élettani Szabályozások Kutatóközpont), v1.01" ),
+    h4( "Írta: Ferenci Tamás (Óbudai Egyetem, Élettani Szabályozások Kutatóközpont), v1.10" ),
     
     tags$script( HTML( "var sc_project=11601191; 
                      var sc_invisible=1; 
@@ -147,7 +147,7 @@ server <- function(input, output) {
                                    lattice::panel.points( arrootsin[!aroutsidein], pch = 19, col = "red" )
                                } )
         
-        if( any( !aroutside )|any( !maoutside ) ) {
+        if( any( !aroutside ) ) {
             specres <- with( spectrum( x, span = 50, plot = FALSE ), data.frame( spec, freq ) )
             emp <- TRUE
         } else {
@@ -162,7 +162,7 @@ server <- function(input, output) {
                                    "Nem stacioner folyamat - (értelmetlen) empirikus spektrum\na szimulált trajektóriára" else
                                        "Elméleti spektrum" )
         
-        if( any( !aroutside )|any( !maoutside ) ) {
+        if( any( !aroutside ) ) {
             emp <- TRUE
             acfres <- with( acf( x, plot = FALSE ), data.frame( acf, lag ) )
         } else {
@@ -190,7 +190,7 @@ server <- function(input, output) {
         p5 <- lattice::xyplot( x2~(0:30), type="h", abline = list( h = 0 ), xlab = "", ylab = "",
                                main = "Elméleti impulzusválasz-függvény" )
         
-        if( any( !aroutside )|any( !maoutside ) ) {
+        if( any( !aroutside ) ) {
             emp <- TRUE
             pacfres <- with( pacf( x[ !is.infinite( x ) ], plot = FALSE, na.action = na.omit ), data.frame( pacf = acf, lag ) )
         } else {
