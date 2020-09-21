@@ -121,7 +121,7 @@ ui <- fluidPage(
         )
     ),
     
-    h4( "Írta: Ferenci Tamás (Óbudai Egyetem, Élettani Szabályozások Kutatóközpont), v1.11" ),
+    h4( "Írta: Ferenci Tamás (Óbudai Egyetem, Élettani Szabályozások Kutatóközpont), v1.12" ),
     
     tags$script( HTML( "var sc_project=11601191; 
                      var sc_invisible=1; 
@@ -191,6 +191,7 @@ server <- function(input, output) {
         p2 <- lattice::xyplot( NA~NA, xlim = c( -2, 2 ), ylim = c( -2, 2 ), xlab = "Valós rész", ylab = "Képzetes rész",
                                scales = list( at = seq( -2, 2, 0.5 ), labels = seq( -2, 2, 0.5 ) ), aspect = "iso",
                                key = list( space = "right", text = list( c( "AR", "MA" ) ), points = list( pch = c( 19, 4 ) ) ),
+                               main = "Késleltetési polinomok gyökei",
                                panel = function( marootsin = maroots, maoutsidein = maoutside, arrootsin = arroots,
                                                  aroutsidein = aroutside ) {
                                    lattice::panel.abline( h = 0, v = 0 )
@@ -262,9 +263,9 @@ server <- function(input, output) {
                                    "Nem stacioner folyamat - (értelmetlen) empirikus PACF\na szimulált trajektóriára" else
                                        "Elméleti PACF")
         
-        gridExtra::grid.arrange( p1, p2, p3, p4, p5, p6, layout_matrix = matrix( c( 1, 2, 2, 5, 1, 3, 4, 6 ), nc = 2 ) )
+        gridExtra::grid.arrange( p1, p2, p3, p4, p5, p6, layout_matrix = matrix( c( 1, 4, 6, 5, 1, 2, 2, 3 ), nc = 2 ) )
         
-        grid::grid.text( "Ferenci Tamás, 2019", 0, 0.02, gp = grid::gpar( fontface = "bold" ), just = "left" )
+        grid::grid.text( "Ferenci Tamás, 2020", 0, 0.02, gp = grid::gpar( fontface = "bold" ), just = "left" )
         grid::grid.text( "https://research.physcon.uni-obuda.hu", 1, 0.02, gp = grid::gpar( fontface = "bold" ), just = "right" )
     }
     
